@@ -1,0 +1,9 @@
+
+•
+java:S1319"sThe type of the "dataList" object should be an interface such as "List" rather than the implementation "ArrayList".(‘×Ÿßùÿÿÿÿ8ÉœÝ°Š.
+Z
+java:S1854"8Remove this useless assignment to local variable "view".(Ä¦•þûÿÿÿÿ8Æòé°Š.
+£
+java:S1186!"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¬‚çÃýÿÿÿÿ8Ä¦Þ°Š.
+K
+java:S1481")Remove this unused "view" local variable.(Ä¦•þûÿÿÿÿ8Æòé°Š.

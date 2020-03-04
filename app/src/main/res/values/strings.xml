@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">instr-tool</string>
+    <string name="link">Paste link here</string>
+    <string name="link_hint">Paste instgram link</string>
+    <string name="btn_text">get image</string>
 </resources>
