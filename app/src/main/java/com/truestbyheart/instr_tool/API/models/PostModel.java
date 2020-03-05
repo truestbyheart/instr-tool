@@ -1,10 +1,13 @@
 package com.truestbyheart.instr_tool.API.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.lang.reflect.Array;
 
-public class PostModel {
+public class PostModel implements Parcelable{
     @SerializedName("post_text")
     private String postText;
 
@@ -55,4 +58,32 @@ public class PostModel {
     public void setVideoURL(String videoURL) {
         this.videoURL = videoURL;
     }
+
+    public PostModel(Parcel parcel){
+        imgURL = parcel.readString();
+        postText = parcel.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(imgURL);
+        dest.writeString(postText);
+    }
+
+    public static final Parcelable.Creator<PostModel> CREATOR = new Parcelable.Creator<PostModel>(){
+        @Override
+        public PostModel createFromParcel(Parcel source) {
+            return new PostModel(source);
+        }
+
+        @Override
+        public PostModel[] newArray(int size) {
+            return new PostModel[0];
+        }
+    };
 }

@@ -1,5 +1,6 @@
 package com.truestbyheart.instr_tool;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.truestbyheart.instr_tool.API.Interfaces.PostData;
 import com.truestbyheart.instr_tool.API.RetrofitClient;
 import com.truestbyheart.instr_tool.API.models.PostModel;
 import com.truestbyheart.instr_tool.Adapters.ResultAdapter;
+import com.truestbyheart.instr_tool.Layouts.Single;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,20 +36,12 @@ public class MainActivity extends AppCompatActivity {
     Button sendLink;
     RecyclerView rvPost;
     ResultAdapter resultAdapter = null;
-    ArrayList<PostModel> rv = new ArrayList<>();
-    ImageView img;
-    public static Picasso picasso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final OkHttpClient client = new OkHttpClient.Builder()
-                .protocols(Collections.singletonList(Protocol.HTTP_1_1))
-                .build();
-          picasso = new Picasso.Builder(this)
-                .downloader(new OkHttp3Downloader(client))
-                .build();
+
 
         init();
     }
@@ -69,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         Retrofit retrofit = RetrofitClient.getRetrofitInstance();
         PostData postData = retrofit.create(PostData.class);
         String link = instLink.getText().toString();
-        img = findViewById(R.id.imageView);
 
         Call call = postData.getImage(link);
 
@@ -78,20 +71,16 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 if (response.body() != null) {
                     PostModel postModel = (PostModel) response.body();
-                   // MainActivity.this.runOnUiThread(() -> {
                         if (postModel.getImgURL() != null) {
-
-                            picasso.get()
-                                    .load(postModel.getImgURL())
-                                    .error(R.drawable.ic_launcher_background)
-                                    .into(img);
+                            Intent singleIntent = new Intent(MainActivity.this, Single.class);
+                            singleIntent.putExtra("post", postModel);
+                            startActivity(singleIntent);
                         } else if (postModel.getImgURLs() != null) {
                             Log.d("TAG", "onResponse: " + postModel.getImgURLs());
                         } else if (postModel.getVideoURL() != null) {
                             Log.d("TAG", "onResponse: " + postModel.getVideoURL());
                         }
 
-                  //  });
 
                 }
             }

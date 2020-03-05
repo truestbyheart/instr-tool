@@ -3,4 +3,9 @@
     <string name="link">Paste link here</string>
     <string name="link_hint">Paste instgram link</string>
     <string name="btn_text">get image</string>
+    <string name="post_image">post image</string>
+    <string name="hello_world">Hello world</string>
+    <string name="download">Download</string>
+    <string name="repost">repost</string>
+    <string name="paste">Paste</string>
 </resources>
