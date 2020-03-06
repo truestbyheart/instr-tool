@@ -17,3 +17,7 @@ u
 Eapp/src/main/java/com/truestbyheart/instr_tool/Adapters/PostData.java,1/d/1dfc27477ca2b53c49811d722530eced21bacd02
 z
 Japp/src/main/java/com/truestbyheart/instr_tool/Adapters/ResultAdapter.java,f/2/f20d795a4a5260496f19b71baf0f10c86b23b299
+r
+Bapp/src/main/java/com/truestbyheart/instr_tool/Helpers/Helper.java,1/b/1bcaff955f8c57aea8bf25436b6edde2cbbd8a35
+r
+Bapp/src/main/java/com/truestbyheart/instr_tool/Layouts/Single.java,2/d/2d29fa1a35193d94ccff77102ca3e13f24c977b6
