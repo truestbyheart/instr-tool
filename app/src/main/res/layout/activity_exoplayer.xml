@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Layouts.Single">
+    tools:context=".Layouts.VideoSingle">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,38 +14,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/post_wait_container"
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/video"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:orientation="vertical">
+                android:layout_height="400dp">
 
-                <ProgressBar
-                    android:id="@+id/post_wait"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="130dp"
-                    android:layout_marginTop="150dp"
-                    android:layout_marginEnd="130dp"
-                    android:layout_marginBottom="150dp" />
-            </RelativeLayout>
-
-
-
-            <ImageView
-                android:id="@+id/post_image"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:contentDescription="@string/post_image"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            </com.google.android.exoplayer2.ui.PlayerView>
 
             <TextView
                 android:id="@+id/post_text"
@@ -57,18 +33,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="8dp">
+                android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/download"
+                    android:id="@+id/download_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/download" />
 
                 <Button
-                    android:id="@+id/repost"
+                    android:id="@+id/repost_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
