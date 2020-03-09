@@ -18,8 +18,10 @@
 
             <com.google.android.exoplayer2.ui.PlayerView
                 android:id="@+id/video"
+                android:paddingTop="18dp"
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="400dp"
+                android:baselineAligned="false">
 
             </com.google.android.exoplayer2.ui.PlayerView>
 

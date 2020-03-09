@@ -23,3 +23,10 @@ k
 ;app/src/main/java/com/truestbyheart/Instr/MainActivity.java,3/3/33ba7bc2d809877b1002f89ea8460940c38cd096
 r
 Bapp/src/main/java/com/truestbyheart/Instr/Layouts/VideoSingle.java,5/d/5d2d23d7c28c5af2e3f2a55c9721e376ef70cf50
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+F
+app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
+@
+local.properties,0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca

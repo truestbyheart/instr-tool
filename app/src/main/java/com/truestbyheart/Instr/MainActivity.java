@@ -66,13 +66,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean checkIfAlreadyhavePermission() {
-        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        return result == PackageManager.PERMISSION_GRANTED;
+        int result = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int result1 = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE);
+        int result2 = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_NETWORK_STATE);
+
+        return result == PackageManager.PERMISSION_GRANTED &&
+                result1 == PackageManager.PERMISSION_GRANTED &&
+                result2 == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestForSpecificPermission() {
         ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_NETWORK_STATE
+                Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.READ_EXTERNAL_STORAGE
         }, 101);
     }
 
@@ -116,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (matcher.find()) {
                 instLink.setText(txtPaste);
+//                instLink.setWidth(View.ma);
             } else {
                 Toast.makeText(this, "Please provide a Instagram link", Toast.LENGTH_SHORT).show();
             }
@@ -142,14 +151,12 @@ public class MainActivity extends AppCompatActivity {
                         Intent singleIntent = new Intent(MainActivity.this, Single.class);
                         singleIntent.putExtra("post", postModel);
                         startActivity(singleIntent);
-                    } else if(postModel.getVideoURL() != null) {
+                    } else if (postModel.getVideoURL() != null) {
                         loadingHelper.stopLoadingDialog();
                         Intent videoIntent = new Intent(MainActivity.this, VideoSingle.class);
                         videoIntent.putExtra("post", postModel);
                         startActivity(videoIntent);
                     }
-
-
 
 
                 }
