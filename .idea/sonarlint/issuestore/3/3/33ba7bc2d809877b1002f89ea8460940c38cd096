@@ -1,10 +1,11 @@
 
+x
+java:S3923["[Remove this conditional structure or edit its code blocks so that they're not all the same.(…œºà8‚ÑåüŠ.
+C
+java:S1659'"&Declare "pasteBtn" on a separate line.(‰–ÓÊ8¦òšƒ‹.
+m
+java:S1301Y"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8‚ÑåüŠ.
 m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Ó¦Ü8Ö±ÍüŠ.
 Q
 java:S10669"/Merge this if statement with the enclosing one.(Å¡æøÿÿÿÿ8Ö±ÍüŠ.
-x
-java:S3923["[Remove this conditional structure or edit its code blocks so that they're not all the same.(…œºà8‚ÑåüŠ.
-m
-java:S1301Y"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8‚ÑåüŠ.
-C
-java:S1659'"&Declare "pasteBtn" on a separate line.(‰–ÓÊ8¦òšƒ‹.
+X	java:S125"<This block of commented-out lines of code should be removed.(‹¦ÛÙ8Æè«ƒŒ.

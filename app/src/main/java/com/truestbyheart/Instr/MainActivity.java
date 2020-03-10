@@ -19,13 +19,16 @@ import androidx.core.content.ContextCompat;
 
 import com.truestbyheart.Instr.API.Interfaces.PostData;
 import com.truestbyheart.Instr.API.RetrofitClient;
+import com.truestbyheart.Instr.API.models.OwnerModel;
 import com.truestbyheart.Instr.API.models.PostModel;
 import com.truestbyheart.Instr.Helpers.LoadingHelper;
 import com.truestbyheart.Instr.Layouts.Single;
+import com.truestbyheart.Instr.Layouts.SliderView;
 import com.truestbyheart.Instr.Layouts.VideoSingle;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     LoadingHelper loadingHelper;
 
     ClipboardManager clipboardManager;
+    ArrayList<PostData> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +160,28 @@ public class MainActivity extends AppCompatActivity {
                         Intent videoIntent = new Intent(MainActivity.this, VideoSingle.class);
                         videoIntent.putExtra("post", postModel);
                         startActivity(videoIntent);
+                    } else {
+                        loadingHelper.stopLoadingDialog();
+
+                        Log.d("nested", "onResponse: " + postModel.getOwner().getUsername());
+                        for(int i =0; i < postModel.getPostData().size(); i++) {
+
+
+
+
+
+
+
+
+
+
+
+                            Log.d("array", "onResponse: " + postModel.getPostData().get(i).getImgUrl());
+                        }
+                        Intent sliderView = new Intent(MainActivity.this, SliderView.class);
+                        // sliderView.putParcelableArrayListExtra("postData", postModel.getPostData());
+                        sliderView.putExtra("post", postModel);
+                        startActivity(sliderView);
                     }
 
 

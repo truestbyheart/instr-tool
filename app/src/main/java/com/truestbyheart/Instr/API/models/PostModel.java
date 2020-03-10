@@ -1,11 +1,15 @@
 package com.truestbyheart.Instr.API.models;
 
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class PostModel implements Parcelable{
     @SerializedName("post_text")
@@ -20,49 +24,52 @@ public class PostModel implements Parcelable{
     @SerializedName("video_url")
     private String videoURL;
 
-    public PostModel(String postText, String imgURL, Array imgURLs, String videoURL) {
+    @SerializedName("owner")
+    private OwnerModel owner;
+
+    @SerializedName("post_data")
+    private List<PostData> postData;
+
+    public PostModel(String postText, String imgURL, Array imgURLs, String videoURL, OwnerModel owner, List<PostData> postData) {
         this.postText = postText;
         this.imgURL = imgURL;
         this.imgURLs = imgURLs;
         this.videoURL = videoURL;
+        this.owner = owner;
+        this.postData = postData;
     }
 
     public String getPostText() {
         return postText;
     }
 
-    public void setPostText(String postText) {
-        this.postText = postText;
-    }
-
     public String getImgURL() {
         return imgURL;
-    }
-
-    public void setImgURL(String imgURL) {
-        this.imgURL = imgURL;
     }
 
     public Array getImgURLs() {
         return imgURLs;
     }
 
-    public void setImgURLs(Array imgURLs) {
-        this.imgURLs = imgURLs;
-    }
-
     public String getVideoURL() {
         return videoURL;
     }
 
-    public void setVideoURL(String videoURL) {
-        this.videoURL = videoURL;
+    public OwnerModel getOwner() {
+        return owner;
+    }
+
+    public List<PostData> getPostData() {
+        return postData;
     }
 
     public PostModel(Parcel parcel){
         imgURL = parcel.readString();
         postText = parcel.readString();
         videoURL = parcel.readString();
+        owner =  parcel.readParcelable(OwnerModel.class.getClassLoader());
+        postData = (List<PostData>) parcel.readValue(PostData.class.getClassLoader());
+
     }
 
     @Override
@@ -75,6 +82,8 @@ public class PostModel implements Parcelable{
         dest.writeString(imgURL);
         dest.writeString(postText);
         dest.writeString(videoURL);
+        dest.writeParcelable(owner, flags);
+        dest.writeValue(postData);
     }
 
     public static final Parcelable.Creator<PostModel> CREATOR = new Parcelable.Creator<PostModel>(){
