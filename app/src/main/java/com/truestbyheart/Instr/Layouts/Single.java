@@ -34,8 +34,8 @@ import static android.view.View.GONE;
 
 public class Single extends AppCompatActivity {
     Helper helper = new Helper(this);
-    ImageView postImg;
-    TextView postText;
+    ImageView postImg,profile;
+    TextView postText, username, fullName;
     Picasso picasso;
     ProgressBar progressBar;
     RelativeLayout postImgWaitContainer;
@@ -55,6 +55,9 @@ public class Single extends AppCompatActivity {
         btnRepost = findViewById(R.id.repost);
         progressBar = findViewById(R.id.post_wait);
         postImgWaitContainer = findViewById(R.id.post_wait_container);
+        profile = findViewById(R.id.profile_image);
+        username =findViewById(R.id.username);
+        fullName = findViewById(R.id.full_name);
 
         picasso = helper.picassoDownloader();
 
@@ -66,7 +69,10 @@ public class Single extends AppCompatActivity {
         toBeCopied = "Repost by @instr-tool " + postModel.getPostText();
 
 
-
+        // view assignments
+        picasso.load(postModel.getOwner().getProfilePic()).error(R.drawable.ic_launcher_background).into(profile);
+        fullName.setText(postModel.getOwner().getFullName());
+        username.setText(postModel.getOwner().getUsername());
         postImg.setVisibility(GONE);
         progressBar.setVisibility(View.VISIBLE);
 

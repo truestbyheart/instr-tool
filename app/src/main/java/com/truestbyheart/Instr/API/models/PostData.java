@@ -10,7 +10,7 @@ public class PostData implements Parcelable {
     @SerializedName("img_url")
     private String imgUrl;
 
-    @SerializedName("video_Url")
+    @SerializedName("video_url")
     private String videoUrl;
 
     public PostData(String imgUrl, String videoUrl) {

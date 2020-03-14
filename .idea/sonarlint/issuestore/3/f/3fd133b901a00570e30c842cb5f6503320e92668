@@ -1,0 +1,11 @@
+
+p
+java:S1104L"SMake CREATOR a static final constant or non-public and provide accessors if needed.(ŠŠ¤ß8¾¥º¥Œ.
+G
+java:S5411G"*Use the primitive boolean expression here.(Šò­‰8ÇûĞŒ.
+o
+java:S3008L"RRename this field "CREATOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠŠ¤ß8¾¥º¥Œ.
+L
+java:S5411H"*Use the primitive boolean expression here.(º–á‚ÿÿÿÿÿ8÷Í‘ĞŒ.
+J
+java:S1444L"-Make this "public static CREATOR" field final(ŠŠ¤ß8¾¥º¥Œ.

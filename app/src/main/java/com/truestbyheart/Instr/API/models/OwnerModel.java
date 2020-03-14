@@ -1,10 +1,7 @@
 package com.truestbyheart.Instr.API.models;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import androidx.annotation.RequiresApi;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -52,13 +49,12 @@ public class OwnerModel implements Parcelable {
         return isPrivate;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
    public OwnerModel(Parcel parcel){
         username = parcel.readString();
         profilePic = parcel.readString();
         fullName =parcel.readString();
-        isPrivate = parcel.readBoolean();
-        isVerified =parcel.readBoolean();
+        isPrivate = parcel.readInt() == 1;
+        isVerified =parcel.readInt() == 0;
 
    }
 
@@ -67,19 +63,17 @@ public class OwnerModel implements Parcelable {
         return hashCode();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void writeToParcel(Parcel dest, int flags) {
        dest.writeString(username);
        dest.writeString(profilePic);
        dest.writeString(fullName);
-       dest.writeBoolean(isPrivate);
-       dest.writeBoolean(isVerified);
+       dest.writeInt(isPrivate ? 1 : 0);
+       dest.writeInt(isVerified ? 1 : 0);
 
     }
 
     public static Parcelable.Creator<OwnerModel> CREATOR = new Parcelable.Creator<OwnerModel>(){
-        @RequiresApi(api = Build.VERSION_CODES.Q)
         @Override
         public OwnerModel createFromParcel(Parcel source) {
             return new OwnerModel(source);

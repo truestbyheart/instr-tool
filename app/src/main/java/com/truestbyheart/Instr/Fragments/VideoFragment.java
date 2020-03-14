@@ -12,6 +12,17 @@ import androidx.fragment.app.Fragment;
 import com.truestbyheart.Instr.R;
 
 public class VideoFragment extends Fragment {
+    private String videoPath;
+
+    public static VideoFragment newInstance(String videoPath) {
+        VideoFragment fragment = new VideoFragment();
+        fragment.setVideoPath(videoPath);
+        return fragment;
+    }
+
+    public void setVideoPath(String videoPath) {
+        this.videoPath = videoPath;
+    }
 
     @Nullable
     @Override
@@ -22,4 +33,5 @@ public class VideoFragment extends Fragment {
                         container,
                         false);
     }
+
 }

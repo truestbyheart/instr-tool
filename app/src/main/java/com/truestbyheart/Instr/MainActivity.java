@@ -162,24 +162,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(videoIntent);
                     } else {
                         loadingHelper.stopLoadingDialog();
-
-                        Log.d("nested", "onResponse: " + postModel.getOwner().getUsername());
-                        for(int i =0; i < postModel.getPostData().size(); i++) {
-
-
-
-
-
-
-
-
-
-
-
-                            Log.d("array", "onResponse: " + postModel.getPostData().get(i).getImgUrl());
-                        }
                         Intent sliderView = new Intent(MainActivity.this, SliderView.class);
-                        // sliderView.putParcelableArrayListExtra("postData", postModel.getPostData());
                         sliderView.putExtra("post", postModel);
                         startActivity(sliderView);
                     }
