@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">instr-tool</string>
+    <string name="app_name">Instr</string>
+    <string name="link">Paste link here</string>
+    <string name="link_hint">Paste Instagram link</string>
+    <string name="btn_text">Download</string>
+    <string name="post_image">post image</string>
+    <string name="hello_world">Hello world</string>
+    <string name="download">Download</string>
+    <string name="repost">repost</string>
+    <string name="paste">Paste</string>
+    <string name="sample_username">truestbyheart</string>
+    <string name="sample_full_name">Daniel Charles Mwangila</string>
+    <string name="sample_post_text">This is the post text</string>
+    <string name="instagram_pic">instagram pic</string>
 </resources>

@@ -1,0 +1,7 @@
+
+Š
+java:S1319"mThe type of the "paths" object should be an interface such as "Map" rather than the implementation "HashMap".(“³´ï8†²‹ÔŒ.
+X
+java:S1874"<Remove this use of "FragmentPagerAdapter"; it is deprecated.(‘í›\8ú‰ù¨Œ.
+`
+java:S2583"CChange this condition so that it does not always evaluate to "true"(Œžñš8ûÙÀ®.

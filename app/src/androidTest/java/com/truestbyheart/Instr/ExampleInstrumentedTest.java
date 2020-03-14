@@ -1,4 +1,4 @@
-package com.truestbyheart.instr_tool;
+package com.truestbyheart.Instr;
 
 import android.content.Context;
 
